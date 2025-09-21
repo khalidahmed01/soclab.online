@@ -1,0 +1,210 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+/* Monospace for project descriptions */
+.desc {
+  font-family: 'Fira Mono', monospace;
+  color: #b0f2c2;
+}
+
+/* Links */
+a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #111;
+  border-bottom: 1px solid #222;
+  z-index: 1000;
+}
+
+nav .nav-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 4rem 2rem;
+  border-bottom: 1px solid #222;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: #1abc9c;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 5px #1abc9c;
+}
+
+header .tagline {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+/* Section Headings */
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1abc9c;
+  text-shadow: 0 0 3px #1abc9c;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+/* Card */
+.card {
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #222;
+  transition: transform 0.3s, box-shadow 0.3s, text-shadow 0.3s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #1abc9c;
+  text-shadow: 0 0 3px #1abc9c;
+}
+
+.card h3 {
+  color: #1abc9c;
+  margin-bottom: 0.5rem;
+}
+
+.card .tech {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+}
+
+.card .impact {
+  font-weight: 500;
+  margin-top: 1rem;
+  color: #ecf0f1;
+}
+
+/* Icons */
+.card .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid #222;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+footer a {
+  color: #1abc9c;
+}
+
+/* Subtle background gradient */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at top left, #0f0f0f, #111);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -2;
+  animation: bgMove 60s linear infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0 0; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0 0; }
+}
+
+/* Matrix-style falling lines */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(26, 188, 156, 0.05) 0px,
+    rgba(26, 188, 156, 0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: -1;
+  animation: matrixScroll 2s linear infinite;
+}
+
+@keyframes matrixScroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+/* Flickering dots (code rain) */
+@keyframes flicker {
+  0%, 19%, 21%, 50%, 52%, 100% { opacity: 0.05; }
+  20%, 51% { opacity: 0.2; }
+}
+
+.flicker-dot {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: #1abc9c;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+  animation: flicker linear infinite;
+}
+
+/* Generate multiple dots dynamically via JS */
+<script>
+const dotCount = 50;
+for (let i = 0; i < dotCount; i++) {
+  const dot = document.createElement('div');
+  dot.className = 'flicker-dot';
+  dot.style.top = Math.random() * 100 + 'vh';
+  dot.style.left = Math.random() * 100 + 'vw';
+  dot.style.animationDuration = (Math.random() * 3 + 2) + 's';
+  document.body.appendChild(dot);
+}
+</script>

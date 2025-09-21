@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khalid Ahmed | Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Fira+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Header / Hero -->
+  <header>
+    <div class="container">
+      <h1>Khalid Ahmed</h1>
+      <p class="tagline">Hands-on SOC Lab & Cybersecurity Projects</p>
+    </div>
+  </header>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="grid">
+
+        <!-- Project 1 -->
+        <div class="card">
+          <div class="icon">🖥️</div>
+          <h3>SOC Lab & Network Segmentation</h3>
+          <p class="tech">VirtualBox, pfSense, Windows & Linux VMs</p>
+          <p class="desc">Designed and implemented a full SOC lab connecting home and internal networks behind a pfSense firewall. Hosted multiple VMs for hands-on cybersecurity monitoring and incident response.</p>
+          <p class="impact"><strong>Impact:</strong> Created a controlled lab for practicing advanced SOC operations.</p>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card">
+          <div class="icon">📧</div>
+          <h3>On-Premises Email Server & Security Testing</h3>
+          <p class="tech">hMailServer, Barracuda Email Gateway</p>
+          <p class="desc">Deployed an on-premises email server integrated with a Barracuda gateway. Configured email security protocols and performed phishing simulations to test threat detection and response.</p>
+          <p class="impact"><strong>Impact:</strong> Strengthened understanding of email security workflows and vulnerability assessment.</p>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Splunk Deployment & Log Forwarding</h3>
+          <p class="tech">Splunk Enterprise, Universal Forwarder</p>
+          <p class="desc">Installed Splunk on-premises for centralized log management. Configured a Universal Forwarder on an internal VM to collect and forward logs for real-time monitoring, alerts, and analysis.</p>
+          <p class="impact"><strong>Impact:</strong> Improved visibility into system and network events for proactive threat detection.</p>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="card">
+          <div class="icon">🛡️</div>
+          <h3>pfSense End-to-End Firewall Configuration</h3>
+          <p class="tech">pfSense, Routing, NAT, VPN</p>
+          <p class="desc">Implemented a complete pfSense firewall to manage and secure traffic between home and internal networks. Configured routing, NAT, VPN, and security policies for a controlled lab environment.</p>
+          <p class="impact"><strong>Impact:</strong> Enabled secure network segmentation and realistic cybersecurity simulations.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <p>Contact: <a href="mailto:your.email@example.com">your.email@example.com</a> | <a href="https://github.com/yourusername" target="_blank">GitHub</a></p>
+      <p>© 2025 Khalid Ahmed</p>
+    </div>
+  </footer>
+
+  <!-- Smooth Scroll -->
+  <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
